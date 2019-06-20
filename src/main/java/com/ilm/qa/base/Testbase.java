@@ -12,13 +12,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.ilm.qa.util.TestUtil;
 
-public class Testbase {
+public class TestBase {
 	
 	public static WebDriver driver;
 	public static Properties prop;
 	
 	
-	public Testbase() {
+	public TestBase() {
 		try {
 			prop = new Properties();
 			FileInputStream ip = new FileInputStream("/private/var/www/AutomationProjects/EclipseProject/ILMTest/src/main/java/com/ilm/"

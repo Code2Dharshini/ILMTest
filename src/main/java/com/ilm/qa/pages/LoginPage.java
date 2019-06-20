@@ -4,9 +4,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.ilm.qa.base.Testbase;
+import com.ilm.qa.base.TestBase;
 
-public class LoginPage extends Testbase{
+public class LoginPage extends TestBase{
 	
 	@FindBy(name="userEmail")
 	WebElement email;
@@ -20,6 +20,9 @@ public class LoginPage extends Testbase{
 	@FindBy(xpath="//img[contains(@alt, 'Sprooki')]")
 	WebElement mercatusLogo;
 	
+	@FindBy(xpath="//a[contains(text(), 'Forgot your password?')]")
+	WebElement forgotPassword;
+	
 	public LoginPage() {
 		PageFactory.initElements(driver, this);
 	}
@@ -30,6 +33,12 @@ public class LoginPage extends Testbase{
 	
 	public boolean validateMercatusLogo() {
 		return mercatusLogo.isDisplayed();
+	}
+	
+	public ForgotPasswordPage forgotPassword() {
+		forgotPassword.click();
+		return new ForgotPasswordPage();
+		
 	}
 	
 	public HomePage login(String loginEmail, String pwd) {
